@@ -8,7 +8,7 @@ I=0
 	touch hashes.txt
 
 	for file in *; do
-		if [[ ("$file" != "checksum.sh") && ("$file" != "hashes.txt") ]] ; then
+		if [[ ("$file" != "hashes.sh") && ("$file" != "hashes.txt") ]] ; then
 			echo -e "File: $file\n\nMD5: " >> hashes.txt
 			md5sum "$file" | sed -E 's/([0-9A-Za-z]*).*/\1/' >> hashes.txt
 			echo -e "\nSHA-1" >> hashes.txt
